@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniFuel | Affordable Nutrition</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="#" class="brand">
+        <div class="brand-icon">🌿</div>
+        <div>
+            <h1>UniFuel</h1>
+            <p>Affordable Nutrition for a Healthier You</p>
+        </div>
+    </a>
+
+    <nav>
+        <a href="#home" class="active">⌂ Home</a>
+        <a href="#calculator">▦ Calculator</a>
+        <a href="#meal-planner">🍴 Meal Planner</a>
+        <a href="#food-explorer">● Food Explorer</a>
+        <a href="#about">ⓘ About</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="eyebrow">SMART NUTRITION STARTS HERE</span>
+
+            <h2>Plan Smarter. <span>Eat Better.</span></h2>
+
+            <p>
+                Calculate your nutrition needs, discover budget-friendly
+                meals, and explore 100 foods — all in one place.
+            </p>
+
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">ϟ</span>
+                    <div>
+                        <strong>Personalized</strong>
+                        <small>Nutrition Targets</small>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">₹</span>
+                    <div>
+                        <strong>Budget-Friendly</strong>
+                        <small>Meal Recommendations</small>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">♧</span>
+                    <div>
+                        <strong>100 Foods</strong>
+                        <small>Nutrition Database</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-circle">
+                <span>🥗</span>
+                <span>🍗</span>
+                <span>🥦</span>
+                <span>🥑</span>
+                <span>🍅</span>
+            </div>
+            <div class="floating-badge">Eat well. Spend smart.</div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section class="dashboard-grid">
+
+        <!-- NUTRITION CALCULATOR -->
+        <article class="card calculator-card" id="calculator">
+
+            <div class="card-header blue-header">
+                <div class="card-icon">▦</div>
+                <div>
+                    <h2>Nutrition Calculator</h2>
+                    <p>Calculate your daily calorie and protein targets</p>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <form id="nutrition-form">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="age">Age (years)</label>
+                            <input id="age" type="number" min="15" max="100"
+                                   value="20" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" required>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input id="weight" type="number" min="1"
+                                   max="500" step="0.1" value="72" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="height">Height (cm)</label>
+                            <input id="height" type="number" min="50"
+                                   max="280" value="175" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activityLevel">Activity Level</label>
+                        <select id="activityLevel" required>
+                            <option value="SEDENTARY">
+                                Sedentary (little exercise)
+                            </option>
+                            <option value="LIGHT">
+                                Light (1–3 days/week)
+                            </option>
+                            <option value="MODERATE" selected>
+                                Moderate (3–5 days/week)
+                            </option>
+                            <option value="VERY_ACTIVE">
+                                Very active (6–7 days/week)
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fitnessGoal">Fitness Goal</label>
+                        <select id="fitnessGoal" required>
+                            <option value="MUSCLE_GAIN">Build Muscle</option>
+                            <option value="FAT_LOSS">Lose Fat</option>
+                            <option value="MAINTENANCE" selected>
+                                Maintain Weight
+                            </option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-blue">
+                        Calculate My Nutrition Needs
+                    </button>
+                </form>
+
+                <div id="nutrition-message" class="message" role="status"
+                     aria-live="polite"></div>
+
+                <div class="targets-panel">
+                    <h3>🎯 Your Daily Targets</h3>
+
+                    <div class="targets-grid">
+                        <div class="target">
+                            <span>🔥</span>
+                            <strong id="target-calories">—</strong>
+                            <small>Calories (kcal)</small>
+                        </div>
+
+                        <div class="target">
+                            <span>💪</span>
+                            <strong id="target-protein">—</strong>
+                            <small>Protein (g)</small>
+                        </div>
+
+                        <div class="target">
+                            <span>⚖️</span>
+                            <strong id="target-weight">—</strong>
+                            <small>Weight (kg)</small>
+                        </div>
+                    </div>
+
+                    <p class="target-note">
+                        Estimates only. Actual nutrition needs vary by person.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- MEAL PLANNER -->
+        <article class="card meal-card" id="meal-planner">
+
+            <div class="card-header green-header">
+                <div class="card-icon">🍴</div>
+                <div>
+                    <h2>Budget Meal Planner</h2>
+                    <p>Discover affordable food recommendations</p>
+                </div>
+            </div>
+
+            <div class="card-body">
+
+                <form id="meal-form">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="dailyCalories">
+                                Daily Calorie Target (kcal)
+                            </label>
+                            <input id="dailyCalories" type="number"
+                                   min="1" value="2500" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dailyProtein">
+                                Daily Protein Target (g)
+                            </label>
+                            <input id="dailyProtein" type="number"
+                                   min="1" value="130" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Daily Budget (₹)</label>
+                            <input id="budget" type="number" min="1"
+                                   step="1" value="100" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dietType">Diet Preference</label>
+                            <select id="dietType" required>
+                                <option value="VEGETARIAN">Vegetarian</option>
+                                <option value="EGGETARIAN">Eggetarian</option>
+                                <option value="NON_VEGETARIAN">
+                                    Non-vegetarian
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-green">
+                        🌿 Get Meal Recommendations
+                    </button>
+                </form>
+
+                <div id="meal-message" class="message" role="status"
+                     aria-live="polite"></div>
+
+                <section class="recommendation-panel">
+                    <h3>🍽️ Your Four-Meal Daily Plan</h3>
+
+                    <p class="panel-description">
+                        Affordable meal recommendations tailored to your diet,
+                        daily calorie target, protein target, and budget.
+                    </p>
+
+                    <p class="panel-description">
+                        Recommendations based on your selected budget and diet.
+                    </p>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Food</th>
+                                <th>Qty (g)</th>
+                                <th>Calories</th>
+                                <th>Protein (g)</th>
+                                <th>Cost (₹)</th>
+                            </tr>
+                            </thead>
+                            <tbody id="meal-results">
+                            <tr>
+                                <td colspan="5" class="empty-state">
+                                    Enter your preferences and select
+                                    Get Meal Recommendations.
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="totals-grid">
+                        <div>
+                            <small>Total Calories</small>
+                            <strong id="meal-total-calories">—</strong>
+                        </div>
+                        <div>
+                            <small>Total Protein</small>
+                            <strong id="meal-total-protein">—</strong>
+                        </div>
+                        <div>
+                            <small>Total Cost</small>
+                            <strong id="meal-total-cost">—</strong>
+                        </div>
+                    </div>
+
+                    <p class="target-note">
+                        These are food suggestions, not a guaranteed complete
+                        daily meal plan.
+                    </p>
+                </section>
+            </div>
+        </article>
+
+        <!-- FOOD EXPLORER -->
+        <article class="card food-card" id="food-explorer">
+
+            <div class="card-header orange-header">
+                <div class="card-icon">🍎</div>
+                <div>
+                    <h2>Food Explorer</h2>
+                    <p>Browse foods and nutritional information</p>
+                </div>
+            </div>
+
+            <div class="card-body">
+
+                <div class="form-group search-group">
+                    <label class="sr-only" for="food-search">Search foods</label>
+                    <input id="food-search" type="search"
+                           placeholder="🔍 Search foods (e.g. oats, paneer, chicken)">
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="food-diet">Diet Type</label>
+                        <select id="food-diet">
+                            <option value="">All</option>
+                            <option value="VEGETARIAN">Vegetarian</option>
+                            <option value="EGGETARIAN">Eggetarian</option>
+                            <option value="NON_VEGETARIAN">
+                                Non-vegetarian
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="food-sort">Sort By</label>
+                        <select id="food-sort">
+                            <option value="name">Name (A–Z)</option>
+                            <option value="protein">Protein (high to low)</option>
+                            <option value="price">Price (low to high)</option>
+                            <option value="calories">Calories (low to high)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="food-message" class="message" role="status"
+                     aria-live="polite"></div>
+
+                <div class="table-wrapper food-table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Food</th>
+                            <th>Calories</th>
+                            <th>Protein</th>
+                            <th>Carbs</th>
+                            <th>Fat</th>
+                            <th>Price</th>
+                            <th>Diet</th>
+                        </tr>
+                        </thead>
+                        <tbody id="food-results">
+                        <tr>
+                            <td colspan="7" class="empty-state">
+                                Loading foods…
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button id="previous-page" type="button"
+                            aria-label="Previous page">‹</button>
+                    <span id="page-indicator">Page 1</span>
+                    <button id="next-page" type="button"
+                            aria-label="Next page">›</button>
+                </div>
+
+                <p id="food-count" class="food-count">Loading database…</p>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="about-section" id="about">
+        <div>
+            <span class="eyebrow">ABOUT UNIFUEL</span>
+            <h2>Better nutrition shouldn't cost more.</h2>
+            <p>
+                UniFuel helps students explore food nutrition, estimate their
+                daily calorie and protein needs, and discover affordable foods.
+            </p>
+        </div>
+
+        <div class="about-stats">
+            <div><strong>100+</strong><span>Food records</span></div>
+            <div><strong>3</strong><span>Core tools</span></div>
+            <div><strong>₹</strong><span>Budget focused</span></div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <a href="#home" class="footer-brand">🌿 UniFuel</a>
+    <p>Affordable Nutrition for a Healthier You</p>
+    <p>Built with Spring Boot, Java, and MySQL</p>
+    <small>Nutrition and food prices are estimates for educational use.</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

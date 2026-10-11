@@ -1,0 +1,11 @@
+POST http://localhost:8080/api/nutrition/calculate
+Content-Type: application/json
+
+{
+  "age": 20,
+  "weight": 72,
+  "height": 175,
+  "gender": "MALE",
+  "fitnessGoal": "MUSCLE_GAIN",
+  "activityLevel": "MODERATE"
+}
