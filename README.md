@@ -58,6 +58,17 @@ Features include:
 - Search and filter foods.
 - Support dietary preferences.
 
+## 📸 Application Screenshots
+
+### Food Explorer
+![Food Explorer](screenshots/food-explorer.png)
+
+### Nutrition Calculator
+![Nutrition Calculator](screenshots/nutrition-calculator.png)
+
+### Smart Meal Planner
+![Smart Meal Planner](screenshots/meal-planner.png)
+
 ### 2. 🧮 Nutrition Calculator
 
 Calculate personalized daily nutrition targets using user information and fitness preferences.
